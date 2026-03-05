@@ -1,5 +1,6 @@
 ---
 title: "All About Me"
+theme: materia
 ---
 
 an about me page, which should include
