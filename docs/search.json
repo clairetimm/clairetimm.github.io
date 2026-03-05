@@ -2,15 +2,43 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "clairetimm.github.io",
+    "title": "Claire Timm",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Hello, welcome to my website!\nI’m Claire, a third year Environmental Studies student at the University of California Santa Barbara. I made this website to broadcast my coding skills in a statistics class."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "All About Me",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "an about me page, which should include\n\nat least 3 photos (can be of you or other things: pets, food, places)\nat least 3 sections (of whatever you want to share about yourself)"
+  },
+  {
+    "objectID": "index.html#page-content-excluded-for-brevity",
+    "href": "index.html#page-content-excluded-for-brevity",
+    "title": "Claire Timm",
+    "section": "",
+    "text": "(write short intro)"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "Personal Project",
+    "section": "",
+    "text": "a project page with:\n\nat least one post with code, its output, and writing about what you’re doing and why\nat least one post with project or paper description (from a job, research project, class)"
+  },
+  {
+    "objectID": "interests.html",
+    "href": "interests.html",
+    "title": "Hobbies & Interests!",
+    "section": "",
+    "text": "another page (a free for all)\n\ncould be about anything (hobbies, interests, etc.)\nmust be organized with section headers\nmust have photos or visuals of some kind"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "Resume",
+    "section": "",
+    "text": "click here for resume"
   }
 ]

@@ -1,9 +1,9 @@
 ---
-title: "About"
+title: "All About Me"
 ---
 
-About this site
+an about me page, which should include
 
-```{r}
-1 + 1
-```
+-   at least 3 photos (can be of you or other things: pets, food, places)
+
+-   at least 3 sections (of whatever you want to share about yourself)

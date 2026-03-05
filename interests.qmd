@@ -1,0 +1,12 @@
+---
+title: "Hobbies & Interests!"
+format: html
+---
+
+another page (a free for all)
+
+- could be about anything (hobbies, interests, etc.)
+
+- must be organized with section headers
+
+- must have photos or visuals of some kind

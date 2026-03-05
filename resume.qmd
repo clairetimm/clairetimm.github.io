@@ -1,0 +1,7 @@
+---
+title: "Resume"
+format: html
+---
+
+
+[click here for resume](https://docs.google.com/document/d/1sq3iCYXJqzkV5XItZ4haoM-9qEyGNIV5nutpMpkdlOY/edit?usp=sharing)
