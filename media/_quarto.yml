@@ -11,10 +11,11 @@ website:
       - about.qmd
       - project.qmd
       - interests.qmd
+      - resume.qmd
 
 format:
   html:
-    theme: flatly
+    theme: materia
     css: styles.css
     toc: true
 

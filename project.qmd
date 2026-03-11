@@ -1,8 +1,12 @@
 ---
 title: "Personal Project"
 theme: materia
+toc: true
 format: html
 ---
+
+
+
 
 a project page with 
 

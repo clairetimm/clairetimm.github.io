@@ -1,9 +1,9 @@
 ---
-title: "Claire Timm"
-image: photo.jpg
+title: "Claire Timm"  
 toc: false
 about: 
   template: jolla
+  image: clairetimm.github.io/media/photo.jpg  
   image-shape: round
   image-width: 17em
   links:
@@ -15,4 +15,4 @@ about:
 
 # Hello, welcome to my website!
 
-I'm Claire, a third year Environmental Studies student at the University of California, Santa Barbara. I made this website to broadcast my coding skills in a statistics class.
+I'm Claire, a third year Environmental Studies student at the University of California, Santa Barbara. I made this website to broadcast my coding skills in a statistics class. Thanks for visiting, I hope you enjoy! :)
