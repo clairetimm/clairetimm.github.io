@@ -270,30 +270,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(day, <span class="at">level =</span> order), <span class="co">#x-axis should be day of the week but converted in order of weekday </span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> sleep_duration, <span class="co">#y-axis should be sleep duration in minutes</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">fill =</span> <span class="fu">factor</span>(day, <span class="at">level =</span> order))) <span class="sc">+</span> <span class="co">#fills in the boxes by day of week</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="co">#first layer is a boxplot</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="co">#first layer is a boxplot and removes NA values</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="co">#makes the points jitter horizontally </span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">height =</span> <span class="dv">0</span>) <span class="sc">+</span> <span class="co">#makes the points not jitter horizontally </span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>         <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Day of Week"</span>, <span class="co">#adds x-axis title</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> <span class="st">"Sleep Duration (minutes)"</span>, <span class="co">#adds y-axis title </span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">"Distribution of Sleep Duration by Day of the Week"</span>, <span class="co">#adds graph title </span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">subtitle =</span> <span class="st">"Most recent observation: 03/11/2026"</span>, <span class="co">#adds a graph subtitle</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">"Day of Week"</span>) <span class="sc">+</span> <span class="co">#adds legend title </span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>( <span class="co">#changes the color of each group</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Monday"</span> <span class="ot">=</span> <span class="st">"lightgoldenrod"</span>, <span class="co">#changes Monday data color</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Tuesday"</span> <span class="ot">=</span> <span class="st">"lightpink2"</span>,  <span class="co">#changes Tuesday data color</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Wednesday"</span> <span class="ot">=</span> <span class="st">"lightsalmon3"</span>, <span class="co">#changes Wednesday data color</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Thursday"</span> <span class="ot">=</span> <span class="st">"lightskyblue3"</span>, <span class="co">#changes Thurday data color </span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Friday"</span> <span class="ot">=</span> <span class="st">"mediumorchid4"</span>)) <span class="sc">+</span> <span class="co">#changes Friday data color </span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co">#changes theme of graph </span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co">#removes legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 5 rows containing non-finite outside the scale range
-(`stat_boxplot()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 5 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>              <span class="at">height =</span> <span class="dv">0</span>,  <span class="co">#makes the points not jitter horizontally </span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>              <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">+</span> <span class="co">#removes NA values </span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>         <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Day of Week"</span>, <span class="co">#adds x-axis title</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> <span class="st">"Sleep Duration (minutes)"</span>, <span class="co">#adds y-axis title </span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">title =</span> <span class="st">"Distribution of Sleep Duration by Day of the Week"</span>, <span class="co">#adds graph title</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>              <span class="at">subtitle =</span> <span class="st">"Most recent observation: 03/11/2026"</span>, <span class="co">#adds a graph subtitle</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>              <span class="at">fill =</span> <span class="st">"Day of Week"</span>) <span class="sc">+</span> <span class="co">#adds legend title </span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>( <span class="co">#changes the color of each group</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Monday"</span> <span class="ot">=</span> <span class="st">"lightgoldenrod"</span>, <span class="co">#changes Monday data color</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Tuesday"</span> <span class="ot">=</span> <span class="st">"lightpink2"</span>,  <span class="co">#changes Tuesday data color</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Wednesday"</span> <span class="ot">=</span> <span class="st">"lightsalmon3"</span>, <span class="co">#changes Wednesday data color</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Thursday"</span> <span class="ot">=</span> <span class="st">"lightskyblue3"</span>, <span class="co">#changes Thurday data color </span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Friday"</span> <span class="ot">=</span> <span class="st">"mediumorchid4"</span>)) <span class="sc">+</span> <span class="co">#changes Friday data color </span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="co">#changes theme of graph </span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co">#removes legend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">

@@ -3,7 +3,7 @@ title: "Claire Timm"
 toc: false
 about: 
   template: jolla
-  image: clairetimm.github.io/media/photo.jpg  
+  image: media/photo.jpg  
   image-shape: round
   image-width: 17em
   links:

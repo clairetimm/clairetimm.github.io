@@ -33,6 +33,8 @@ my_data <- read_csv(here::here("posts", "code", "mydata.csv"))
 
 ```{r}
 #| label: clean my data
+#| message: false
+#| warning: false
 my_data_clean <- my_data |> #create new object for cleaned personal data
   rename(date = "Date (mm/dd/yyyy)", #renames column 'date'
          day = "Day of Week", #renames colum 'day'
@@ -48,6 +50,8 @@ my_data_clean <- my_data |> #create new object for cleaned personal data
 
 ```{r}
 #| label: graph of my data with continuous predictor
+#| message: false
+#| warning: false
 #base layer: ggplot call 
 ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
        aes(x = screen_time, #x-axis is data of 'screen_time'
@@ -66,18 +70,21 @@ ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
 
 ```{r}
 #| label: graph of my data with categorical predictor
+#| message: false
+#| warning: false
 order <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday") #defines the order of weekdays 
 
 ggplot(data = my_data_clean, #start with my_data_clean data frame 
        aes(x = factor(day, level = order), #x-axis should be day of the week but converted in order of weekday 
            y = sleep_duration, #y-axis should be sleep duration in minutes
            fill = factor(day, level = order))) + #fills in the boxes by day of week
-  geom_boxplot() + #first layer is a boxplot
+  geom_boxplot(na.rm = TRUE) + #first layer is a boxplot and removes NA values
   geom_jitter(width = 0.2, #makes the points jitter horizontally 
-              height = 0) + #makes the points not jitter horizontally 
+              height = 0,  #makes the points not jitter horizontally 
+              na.rm = TRUE) + #removes NA values 
          labs(x = "Day of Week", #adds x-axis title
               y = "Sleep Duration (minutes)", #adds y-axis title 
-              title = "Distribution of Sleep Duration by Day of the Week", #adds graph title 
+              title = "Distribution of Sleep Duration by Day of the Week", #adds graph title
               subtitle = "Most recent observation: 03/11/2026", #adds a graph subtitle
               fill = "Day of Week") + #adds legend title 
   scale_fill_manual(values = c( #changes the color of each group

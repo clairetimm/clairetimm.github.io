@@ -7,7 +7,7 @@ format: html
 
 ## Hometown
 
-I grew up in Folsom, California which is a small town in Northern California. I often spent my summers outdoors swimming in the lake, taking advantage of the beautiful nature nearby with lots of hikes, and hanging out with friends. Growing up in this town gave me a strong appreciation for the environment. Looking back, my favorite childhood memories were all made outside and this definitely inspired me to purse a degree in Environmental Studies!!
+I grew up in Folsom, California which is a small town in Northern California. I often spent my summers outdoors swimming in the lake, taking advantage of the beautiful nature nearby with lots of hikes, and hanging out with friends. Growing up in this town gave me a strong appreciation for the environment. Looking back, my favorite childhood memories were all made outside and this definitely inspired me to purse a degree in Environmental Studies.
 
 ![View of Rainbow Bridge across the American River](media/Folsom_CA.png)
 
