@@ -7,9 +7,11 @@ about:
   image-shape: round
   image-width: 17em
   links:
-    - text: GitHub
+    - icon: github 
+      text: GitHub
       href: https://github.com/clairetimm
-    - text: Email
+    - icon: envelope
+      text: Email
       href: mailto:clairetimm@ucsb.edu
 ---
 
