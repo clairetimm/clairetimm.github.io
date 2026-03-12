@@ -8,7 +8,7 @@ image: "images.jpeg"
 theme: materia
 ---
 
-This is a sample of code from my personal data project for my Environmental Statistics class. I centered my project around the research question "Does my screen time usage in the day affect my sleep duration that night?". Although I also tracked additional predictor variables such as step count, time spent on schoolwork, exercise duration, and caffeine intake.
+This is a sample of code from my personal data project for my Environmental Statistics class. I centered my project around the research question "Does my screen time usage in the day affect my sleep duration that night?". Additionally I tracked other predictor variables such as step count, time spent on schoolwork, exercise duration, and caffeine intake. 
 
 ## Set up
 
@@ -19,6 +19,9 @@ This is a sample of code from my personal data project for my Environmental Stat
 
 #read in packages here
 library(tidyverse)
+library(plotly) 
+library(DT) 
+library(leaflet) 
 library(here)
 library(janitor)
 library(readxl)
@@ -72,14 +75,16 @@ ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
 #| label: graph of my data with categorical predictor
 #| message: false
 #| warning: false
-order <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday") #defines the order of weekdays 
-
-ggplot(data = my_data_clean, #start with my_data_clean data frame 
-       aes(x = factor(day, level = order), #x-axis should be day of the week but converted in order of weekday 
+order <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday") #defines the order of weekdays
+static <- my_data_clean |> 
+ggplot(aes(x = factor(day, level = order), #x-axis should be day of the week but converted in order of weekday 
            y = sleep_duration, #y-axis should be sleep duration in minutes
            fill = factor(day, level = order))) + #fills in the boxes by day of week
   geom_boxplot(na.rm = TRUE) + #first layer is a boxplot and removes NA values
-  geom_jitter(width = 0.2, #makes the points jitter horizontally 
+  geom_jitter(aes(text = paste( #add jitter points with custom hover text
+      "Day:", day, #display day
+      "<br>Sleep Duration:", sleep_duration, "minutes")), #display minutes 
+              width = 0.2, #makes the points jitter horizontally 
               height = 0,  #makes the points not jitter horizontally 
               na.rm = TRUE) + #removes NA values 
          labs(x = "Day of Week", #adds x-axis title
@@ -95,7 +100,8 @@ ggplot(data = my_data_clean, #start with my_data_clean data frame
       "Friday" = "mediumorchid4")) + #changes Friday data color 
   theme_minimal() + #changes theme of graph 
   theme(legend.position = "none") #removes legend
-
+#show interactive plot
+ggplotly(static, tooltip = "text") 
 ```
 
 **Figure 2. Distribution of sleep duration (minutes) across different days of the week.** The black circles represent my individual observations of sleep duration, categorized by the day of the school week (Monday, Tuesday, Wednesday, Thursday, and Friday). Each day of the week is associated with its own color and has a box plot with my sleep data. The middle line in each box plot represents the median and the outer lines represent the first and third quartile. Sleep duration appears the most variable and longest on Monday and Wednesday, while Tuesday appears to have the least variation and shortest duration.
