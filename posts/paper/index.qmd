@@ -1,0 +1,15 @@
+---
+title: "WRIT 105S Paper"
+subtitle: "Final paper for my Writing about Sustainability class."
+author: "Claire Timm"
+date: "2025-05-30"
+categories: [papers]
+image: "writing.png"
+theme: materia
+---
+
+I wrote this paper for my *Writing about Sustainability* course last spring quarter. The course focused on the practice and analysis of different forms of writing that address sustainability in interdisciplinary contexts. For the final assignment, students were allowed to choose a topic of their choice and analyze its current role in sustainability, as well as propose potential improvements. I focused on sustainability in college dining halls referencing other colleges' sustainability efforts but focusing on improving UCSB's dining halls.
+
+<iframe src="105S.pdf" width="100%" height="600px">
+
+</iframe>

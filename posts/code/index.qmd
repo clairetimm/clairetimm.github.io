@@ -1,0 +1,94 @@
+---
+title: "Code"
+subtitle: "Some code from my Environmental Statistics class."
+author: "Claire Timm"
+date: "2026-03-11"
+categories: [coding]
+image: "images.jpeg"
+theme: materia
+---
+
+This is a sample of code from my personal data project for my Environmental Statistics class. I centered my project around the research question "Does my screen time usage in the day affect my sleep duration that night?". Although I also tracked additional predictor variables such as step count, time spent on schoolwork, exercise duration, and caffeine intake.
+
+## Set up
+
+```{r}
+#| label: packages and data
+#| message: false
+#| warning: false
+
+#read in packages here
+library(tidyverse)
+library(here)
+library(janitor)
+library(readxl)
+library(ggeffects)
+library(readr)
+
+#read in data here
+my_data <- read_csv(here::here("posts", "code", "mydata.csv"))
+```
+
+## Clean up data
+
+```{r}
+#| label: clean my data
+my_data_clean <- my_data |> #create new object for cleaned personal data
+  rename(date = "Date (mm/dd/yyyy)", #renames column 'date'
+         day = "Day of Week", #renames colum 'day'
+         sleep_duration = "Sleep Duration (minutes)", #renames column 'sleep_duration'
+         step_count = "Step Count", #renames colum 'step_count'
+         homework_duration = "Time spent on homework (minutes)", #renames column 'homework_duration'
+         screen_time = "Screen Time (minutes)", #renames column 'screen_time'
+         exercise_duration = "Exercise duration (minutes)", #renames_column 'exercise_duration'
+         caffeine_intake = "Caffeine Intake (mg)") #renames column 'caffeine_intake' 
+```
+
+## Graph with a continuous predictor:
+
+```{r}
+#| label: graph of my data with continuous predictor
+#base layer: ggplot call 
+ggplot(data = my_data_clean, #start with data frame 'my_data_clean'
+       aes(x = screen_time, #x-axis is data of 'screen_time'
+           y = sleep_duration)) + #y-axis is data of 'sleep_duration'
+  geom_point(color = "purple4", shape = 18, size = 3, na.rm = TRUE) + #changes the point color, shape, and size 
+  labs(x = "Screen Time (minutes)", #adds x-axis title
+       y = "Sleep Duration (minutes)", #adds y-axis title 
+       title = "How Screen Time affects Sleep Duration", #adds a graph title 
+       subtitle = "Most recent observation: 03/11/2026") + #adds a graph subtitle 
+  theme_minimal() #changes graph theme 
+```
+
+**Figure 1. Relationship between daily screen time (minutes) and sleep duration (minutes).** The scatter plot graphs the relationship between daily screen time and sleep duration that night in minutes. Each purple diamond represents an observation. Screen time is on the x-axis in minutes and sleep duration is on the y-axis in minutes. The data shows the variation in sleep duration across different levels of screen time.
+
+## Graph with a categorical predictor:
+
+```{r}
+#| label: graph of my data with categorical predictor
+order <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday") #defines the order of weekdays 
+
+ggplot(data = my_data_clean, #start with my_data_clean data frame 
+       aes(x = factor(day, level = order), #x-axis should be day of the week but converted in order of weekday 
+           y = sleep_duration, #y-axis should be sleep duration in minutes
+           fill = factor(day, level = order))) + #fills in the boxes by day of week
+  geom_boxplot() + #first layer is a boxplot
+  geom_jitter(width = 0.2, #makes the points jitter horizontally 
+              height = 0) + #makes the points not jitter horizontally 
+         labs(x = "Day of Week", #adds x-axis title
+              y = "Sleep Duration (minutes)", #adds y-axis title 
+              title = "Distribution of Sleep Duration by Day of the Week", #adds graph title 
+              subtitle = "Most recent observation: 03/11/2026", #adds a graph subtitle
+              fill = "Day of Week") + #adds legend title 
+  scale_fill_manual(values = c( #changes the color of each group
+      "Monday" = "lightgoldenrod", #changes Monday data color
+      "Tuesday" = "lightpink2",  #changes Tuesday data color
+      "Wednesday" = "lightsalmon3", #changes Wednesday data color
+      "Thursday" = "lightskyblue3", #changes Thurday data color 
+      "Friday" = "mediumorchid4")) + #changes Friday data color 
+  theme_minimal() + #changes theme of graph 
+  theme(legend.position = "none") #removes legend
+
+```
+
+**Figure 2. Distribution of sleep duration (minutes) across different days of the week.** The black circles represent my individual observations of sleep duration, categorized by the day of the school week (Monday, Tuesday, Wednesday, Thursday, and Friday). Each day of the week is associated with its own color and has a box plot with my sleep data. The middle line in each box plot represents the median and the outer lines represent the first and third quartile. Sleep duration appears the most variable and longest on Monday and Wednesday, while Tuesday appears to have the least variation and shortest duration.

@@ -4,5 +4,4 @@ theme: materia
 format: html
 ---
 
-
-[click here for resume](https://docs.google.com/document/d/1sq3iCYXJqzkV5XItZ4haoM-9qEyGNIV5nutpMpkdlOY/edit?usp=sharing)
+<iframe src="media/CTresume.pdf" width="100%" height="600px"></iframe>
