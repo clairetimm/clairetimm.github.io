@@ -19,8 +19,10 @@ website:
 
 format:
   html:
-    theme: materia
-    css: styles.css
+    theme: 
+      - materia 
+      - styles.scss
+    mainfont: Delius
     toc: true
 
 

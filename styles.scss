@@ -1,0 +1,36 @@
+/*-- scss:defaults --*/
+
+// Colors
+$dark-green: #858E79;
+$purple: #663399;
+$cream: #FDFBF7;
+$gray: #64605f;
+$teal: #008B8B;
+$orange: #ad7237;
+
+/*-- scss:defaults --*/
+
+// fonts
+$onset: "Onest", sans-serif;
+
+
+// Import font-size
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Onest:wght@100..900&display=swap');
+
+// Colors
+$dark-green: #858E79;
+$light-green: #D1D9CE;
+$cream: #FDFBF7;
+$gray: #64605f;
+$purple: #9158A2;
+$orange: #ad7237;
+
+// Inline code
+$code-bg: $cream; // inline code background color
+$code-color: $purple; // inline code text 
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, h5 {
+  font-family: $onset;
+}
+
