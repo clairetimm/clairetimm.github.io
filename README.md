@@ -1,4 +1,4 @@
-# clairetimm.tihub.io Repo
+# clairetimm.github.io Repo
 
 ## General Information 
 
